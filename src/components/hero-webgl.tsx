@@ -114,8 +114,8 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
-  const titleWords = "Synapse AI".split(" ")
-  const subtitle = "Нейроинтерфейсы нового поколения."
+  const titleWords = "Перехват Торнадо".split(" ")
+  const subtitle = "TIV — щит против урагана. За гранью стихии."
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
@@ -173,6 +173,15 @@ export const Hero3DWebGL = () => {
             {subtitle}
           </div>
         </div>
+
+        {/* Кнопка-призыв с плавным скроллом к контенту */}
+        <a
+          href="#features"
+          className={`mt-8 pointer-events-auto inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-bold uppercase tracking-wider px-8 py-4 rounded-md transition-all duration-300 hover:scale-105 ${subtitleVisible ? "fade-in-subtitle" : "opacity-0"}`}
+          style={{ animationDelay: `${titleWords.length * 0.13 + 0.6}s` }}
+        >
+          Погрузиться в шторм
+        </a>
       </div>
 
       <Canvas
